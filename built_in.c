@@ -9,9 +9,9 @@
  */
 int _exit(info_t *info)
 {
-    int exitcheck;
+int exitcheck;
 
-    if (info->argv[1])  /* If there is an exit argument */
+if (info->argv[1])  /* If there is an exit argument */
     {
         exitcheck = _erratoi(info->argv[1]);
         if (exitcheck == -1)
@@ -78,22 +78,5 @@ int _mycd(info_t *info)
         _setenv(info, "OLDPWD", _getenv(info, "PWD="));
         _setenv(info, "PWD", getcwd(buffer, 1024));
     }
-    return (0);
-}
-
-/**
- * _help - shows help informations
- * @info: Structure has potential arguments.
- *        constant function prototype.
- * Return: Always 0
- */
-int _help(info_t *info)
-{
-    char **arg_array;
-
-    arg_array = info->argv;
-    _puts("help function works. Function not implemented yet \n");
-    if (0)
-        _puts(*arg_array);
     return (0);
 }
